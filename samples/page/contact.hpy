@@ -1,0 +1,5 @@
+with form(action=""):
+    label("Name: ",  for_="name"), br(), input_(id="name", name="Name", type="text", size="30"), br()
+    label("Email: "), br(), input_(id="email", name="email", type="email", size="30"), br()
+    label("Message: "), br(), textarea(id="message", name="message", rows="7", cols="30"), br()
+

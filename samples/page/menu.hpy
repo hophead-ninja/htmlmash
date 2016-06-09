@@ -1,0 +1,3 @@
+items = [("Page", "index.html"), ("Blog", "blog.html")]
+
+nav(ul([li(a(name, href=location), class_="menu-item") for name, location in items], class_="menu"))

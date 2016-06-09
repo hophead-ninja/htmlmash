@@ -1,0 +1,22 @@
+from page import menu, articles, contact
+
+__doctype__ = "html"
+
+page_id = "main"
+
+with html():
+    with head():
+        meta(charset="UTF-8")
+        title("Page")
+
+    with body():
+        header_text = "Page"
+        header(h1(header_text) if page_id == "main" else span(header_text))
+        menu(items=menu.items+[("Contact", "contact.html")])
+        with div(class_="container"):
+            if page_id == "main":
+                p("Welcome")
+            elif page_id == "blog":
+                section(articles, class_="page-articles")
+            elif page_id == "contact":
+                contact

@@ -1,0 +1,14 @@
+__doctype__ = "html"
+
+scripts = ["script_one.js", "script_two.js", "script_three.js"]
+paragraphs = ["one", "two", "three"]
+
+with html():
+    with head():
+        meta(charset="UTF-8")
+        title("Simple Page")
+        [script(js) for js in scripts]
+
+    with body():
+        with div(class_="container"):
+            (p(paragraph) for paragraph in paragraphs)

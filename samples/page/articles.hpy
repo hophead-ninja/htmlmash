@@ -1,0 +1,10 @@
+from collections import namedtuple
+Article = namedtuple('Article', ['title', 'text'])
+
+news = [Article("First Article", "Text here"), Article("Second Article", "Text here again")]
+
+if news:
+    for idx, post in enumerate(news):
+        article(h1(post.title), p(post.text), class_="artcile-{}".format(idx))
+else:
+    div("no articles")

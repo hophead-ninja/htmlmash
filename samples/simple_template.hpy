@@ -1,0 +1,30 @@
+# template scope
+
+text = "a template."
+"This is {}\n".format(text)
+
+# static expression
+"This is " + text + "\n"
+
+def static_text():
+    # python scope
+    "regular", "python scope",
+    "these three texts are not included in the template"
+
+    # but you can return something
+    return "This is {}\n".format(text)
+
+# back to template scope
+static_text()  # and add returned text to template
+
+def mixed_text():
+    # python scope
+    with Element() as dynamic_text:
+        # (sub)template scope
+        "This is {}\n".format(text)
+
+    # python scope
+    return "This is {} ".format(text), dynamic_text
+
+# template scope
+mixed_text()
